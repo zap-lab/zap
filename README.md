@@ -19,7 +19,17 @@
 First, You need `gatsby-cli` to use gatsby features. Type the following command on your terminal.
 
 ```bash
+// yarn
+yarn global add gatsby-cli
+
+// npm
 npm install -g gatsby-cli
+```
+
+Then, run following command
+
+```bash
+yarn start
 ```
 
 # Contribution
