@@ -7,7 +7,7 @@ module.exports = {
     keywords: 'gatsbyjs, gatsby, typescript, simple, blog',
     siteUrl: '',
     author: {
-      name: 'Mighty Ligeon',
+      name: 'Mighty Legion',
       url: 'https://github.com/Mighty-Legion/lull',
       email: ''
     }
