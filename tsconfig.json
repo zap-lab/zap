@@ -4,6 +4,7 @@
     "target": "esnext",
     "jsx": "preserve",
     "lib": ["dom", "es2015", "es2017"],
+    "baseUrl": "src",
     "strict": true,
     "noEmit": true,
     "isolatedModules": true,
