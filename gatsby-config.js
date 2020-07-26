@@ -13,6 +13,7 @@ module.exports = {
     }
   },
   plugins: [
+    'gatsby-plugin-resolve-src',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
