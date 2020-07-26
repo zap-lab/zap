@@ -95,7 +95,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn tsc --noEmit && yarn lint && yarn test",
+      "pre-push": "yarn tsc --noEmit && yarn lint && CI=ture yarn test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
