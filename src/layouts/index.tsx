@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
@@ -38,9 +38,9 @@ const IndexLayout: React.FC = ({ children }) => (
           meta={[
             {
               name: 'description',
-              content: data.site.siteMetadata.description
+              content: data.site.siteMetadata.description,
             },
-            { name: 'keywords', content: data.site.siteMetadata.keywords }
+            { name: 'keywords', content: data.site.siteMetadata.keywords },
           ]}
         />
         <Header title={data.site.siteMetadata.title} />

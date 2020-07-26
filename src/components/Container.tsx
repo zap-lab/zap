@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React, { ReactNode } from 'react';
 import styled from '@emotion/styled';
 
 import { widths } from 'styles/variables';
-import { getEmSize } from 'styles/mixins';
+import getEmSize from 'styles/getEmSize';
 
 const StyledContainer = styled.div({
   position: 'relative',
@@ -14,6 +14,7 @@ const StyledContainer = styled.div({
 
 interface ContainerProps {
   className?: string;
+  children?: ReactNode;
 }
 
 const Container: React.FC<ContainerProps> = ({ children, className }) => (

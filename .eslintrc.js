@@ -1,5 +1,5 @@
 module.exports = {
-  parser: '@typescript-eslint/parser', // Specifies the ESLint parser
+  parser: '@typescript-eslint/parser',
   extends: [
     'airbnb-typescript',
     'eslint:recommended',
@@ -8,9 +8,6 @@ module.exports = {
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
   ],
-  parserOptions: {
-    project: './tsconfig.json',
-  },
   settings: {
     react: {
       version: 'detect',
@@ -22,7 +19,11 @@ module.exports = {
     es6: true,
   },
   plugins: ['@typescript-eslint', 'react'],
+  rules: {
+    'react/prop-types': 0,
+  },
   parserOptions: {
+    project: './tsconfig.json',
     ecmaFeatures: {
       jsx: true,
     },

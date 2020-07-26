@@ -1,6 +1,6 @@
-import React from "react";
-import Title from "components/articles//Title";
-import Description from "components/articles/Description";
+import React from 'react';
+import Title from 'components/articles//Title';
+import Description from 'components/articles/Description';
 
 interface Props {
   title: string;
