@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-typescript-plus",
-  "description": "A starter kit for TypeScript-based Gatsby projects with sensible defaults.",
+  "name": "zap-blog",
+  "description": "A fastest micro blog service",
   "version": "1.0.0",
   "private": true,
-  "author": "Resi Respati <resir014@gmail.com>",
+  "author": "Zap <dev_zap@googlegroups.com>",
   "keywords": [
     "gatsby"
   ],
@@ -63,6 +63,7 @@
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-links": "^5.3.19",
     "@storybook/addons": "^5.3.19",
+    "@storybook/preset-typescript": "^3.0.0",
     "@storybook/react": "^5.3.19",
     "@types/classnames": "^2.2.8",
     "@types/node": "^12.0.10",
@@ -81,7 +82,9 @@
     "gh-pages": "^2.0.1",
     "husky": "^4.2.5",
     "prettier": "^1.18.2",
-    "rimraf": "^2.6.3"
+    "react-docgen-typescript-loader": "^3.7.2",
+    "rimraf": "^2.6.3",
+    "ts-loader": "^8.0.1"
   },
   "husky": {
     "hooks": {
