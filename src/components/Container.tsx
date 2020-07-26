@@ -1,21 +1,24 @@
-import * as React from 'react'
-import styled from '@emotion/styled'
+import React, { ReactNode } from 'react';
+import styled from '@emotion/styled';
 
-import { widths } from '../styles/variables'
-import { getEmSize } from '../styles/mixins'
+import { widths } from 'styles/variables';
+import getEmSize from 'styles/getEmSize';
 
-const StyledContainer = styled.div`
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-  max-width: ${getEmSize(widths.lg)}em;
-`
+const StyledContainer = styled.div({
+  position: 'relative',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  width: 'auto',
+  maxWidth: `${getEmSize(widths.lg)}em`,
+});
 
 interface ContainerProps {
-  className?: string
+  className?: string;
+  children?: ReactNode;
 }
 
-const Container: React.FC<ContainerProps> = ({ children, className }) => <StyledContainer className={className}>{children}</StyledContainer>
+const Container: React.FC<ContainerProps> = ({ children, className }) => (
+  <StyledContainer className={className}>{children}</StyledContainer>
+);
 
-export default Container
+export default Container;

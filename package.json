@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-typescript-plus",
-  "description": "A starter kit for TypeScript-based Gatsby projects with sensible defaults.",
+  "name": "zap-blog",
+  "description": "A fastest micro blog service",
   "version": "1.0.0",
   "private": true,
-  "author": "Resi Respati <resir014@gmail.com>",
+  "author": "Zap <dev_zap@googlegroups.com>",
   "keywords": [
     "gatsby"
   ],
@@ -15,10 +15,10 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "dev": "gatsby develop",
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
-    "lint": "eslint 'src/**/*.{ts,tsx}'",
-    "start": "npm run dev",
-    "test": "npm run type-check && npm run lint",
-    "type-check": "tsc",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" --max-warnings=0",
+    "start": "yarn dev",
+    "test": "jest",
+    "tsc": "tsc",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -63,26 +63,32 @@
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-links": "^5.3.19",
     "@storybook/addons": "^5.3.19",
+    "@storybook/preset-typescript": "^3.0.0",
     "@storybook/react": "^5.3.19",
     "@types/classnames": "^2.2.8",
     "@types/node": "^12.0.10",
     "@types/react": "^16.8.22",
     "@types/react-dom": "^16.8.4",
     "@types/react-helmet": "^5.0.8",
-    "@typescript-eslint/eslint-plugin": "^2.6.0",
-    "@typescript-eslint/parser": "^2.6.0",
+    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "@typescript-eslint/parser": "^3.6.0",
     "babel-loader": "^8.1.0",
-    "eslint": "^6.6.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-typescript": "^8.0.2",
     "eslint-config-blvd": "^1.0.0",
-    "eslint-config-prettier": "^6.5.0",
-    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.3",
     "gh-pages": "^2.0.1",
     "husky": "^4.2.5",
     "prettier": "^1.18.2",
-    "rimraf": "^2.6.3"
+    "react-docgen-typescript-loader": "^3.7.2",
+    "rimraf": "^2.6.3",
+    "ts-loader": "^8.0.1"
   },
   "husky": {
     "hooks": {
+      "pre-push": "yarn tsc --noEmit && yarn lint",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }

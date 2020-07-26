@@ -1,5 +1,5 @@
-import { dimensions, fonts, colors, breakpoints } from './variables'
-import { getEmSize } from './mixins'
+import getEmSize from 'styles/getEmSize';
+import { dimensions, fonts, colors, breakpoints } from './variables';
 
 export default `
   html {
@@ -157,4 +157,4 @@ export default `
       padding-left: 1.25rem;
     }
   }
-`
+`;
