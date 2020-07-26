@@ -13,7 +13,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": false,
-    "preserveConstEnums": true
+    "preserveConstEnums": true,
+    "moduleResolution": "node"
   },
   "include": ["src/**/*"]
 }
