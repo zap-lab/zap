@@ -5,6 +5,7 @@
     "jsx": "react",
     "lib": ["dom", "es2015", "es2017"],
     "types": ["jest", "node"],
+    "typeRoots": ["./node_modules/@types"],
     "baseUrl": "src",
     "strict": true,
     "noEmit": true,
