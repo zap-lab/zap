@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { transparentize } from 'polished';
-import { graphql, Link } from "gatsby";
+import { graphql, Link } from 'gatsby';
 
-import { heights, dimensions, colors, widths } from "styles/variables";
+import { heights, dimensions, colors, widths } from 'styles/variables';
 import Container from 'components/Container';
-import logo from "images/logo.svg";
-import getEmSize from "styles/getEmSize";
+import logo from 'images/logo.svg';
+import getEmSize from 'styles/getEmSize';
 
 const StyledHeader = styled.header({
   height: `${heights.header}px`,
