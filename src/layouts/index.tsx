@@ -20,7 +20,7 @@ interface StaticQueryProps {
 }
 
 const IndexLayout: React.FC = ({ children }) => (
-  <StaticQuery
+  <StaticQuery<GatsbyTypes.IndexLayoutQueryQuery>
     query={graphql`
       query IndexLayoutQuery {
         site {

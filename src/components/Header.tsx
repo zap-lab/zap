@@ -3,9 +3,10 @@ import styled from '@emotion/styled';
 import { transparentize } from 'polished';
 import { graphql, Link } from "gatsby";
 
-import { heights, dimensions, colors } from 'styles/variables';
+import { heights, dimensions, colors, widths } from "styles/variables";
 import Container from 'components/Container';
 import logo from "images/logo.svg";
+import getEmSize from "styles/getEmSize";
 
 const StyledHeader = styled.header({
   height: `${heights.header}px`,
@@ -16,6 +17,7 @@ const StyledHeader = styled.header({
 
 const HeaderInner = styled(Container)({
   display: 'flex',
+  maxWidth: `${getEmSize(widths.xl)}em`,
   flexDirection: 'row',
   alignItems: 'center',
   height: '100%',

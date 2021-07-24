@@ -5,17 +5,18 @@ export const colors = {
   accent: '#ffb238',
   ui: {
     light: '#f5f3f7',
-    dark: '#1c1d1c',
+    dark: '#222222',
   },
   header: {
     light: '#1c1d1c',
     dark: '#1c1d1c',
   },
   code: '#fcf6f0',
-  gray: {
-    dark: 'hsla(270, 17.119554496%, 0%, 0.92)',
-    copy: 'hsla(270, 15.797828016000002%, 0%, 0.88)',
-    calm: 'rgba(0, 0, 0, 0.54)',
+  bg: {
+    grey: '#f1f1f1',
+  },
+  opacity: {
+    whisper: 0.05,
   },
   white: '#fff',
   black: '#000',
@@ -38,9 +39,9 @@ export const breakpoints = {
 };
 
 export const widths = {
-  md: 720,
+  md: 740,
   lg: 960,
-  xl: 1140,
+  xl: 1440,
 };
 
 export const dimensions = {
