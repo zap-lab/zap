@@ -1,16 +1,16 @@
-<h1 align="center">lull</h1>
+<h1 align="center">⚡️ Zap</h1>
 <p align="center">Fast and lightweight blog research project</p>
 
 # Table of contents
 
 - [Overview](#overview)
 
-   - [What is lull?](#what-is-lull?)
+   - [What is zap?](#what-is-zap?)
    - [Getting started](#getting-started)
 
 # Overview
 
-## What is lull?
+## What is zap?
 
 ## Getting started
 
@@ -40,7 +40,7 @@ yarn start
 
 # License
 
-lull is under MIT license
+zap is under MIT license
 
 MIT License
 

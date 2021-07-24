@@ -2,13 +2,13 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'Lull',
+    title: '⚡️ Zap',
     description: 'Simple and fast blog system.',
     keywords: 'gatsbyjs, gatsby, typescript, simple, blog',
     siteUrl: 'https://github.com/Mighty-Legion',
     author: {
       name: 'Mighty Legion',
-      url: 'https://github.com/Mighty-Legion/lull',
+      url: 'https://github.com/zap-lab/zap',
       email: ''
     }
   },
