@@ -3404,7 +3404,7 @@ declare namespace GatsbyTypes {
   type IndexLayoutQueryQuery = {
     readonly site: Maybe<{
       readonly siteMetadata: Maybe<
-        Pick<SiteSiteMetadata, 'title' | 'description'>
+        Pick<SiteSiteMetadata, 'title' | 'description' | 'keywords'>
       >;
     }>;
   };

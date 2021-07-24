@@ -9,16 +9,6 @@ import Header from 'components/Header';
 import LayoutRoot from 'components/LayoutRoot';
 import LayoutMain from 'components/LayoutMain';
 
-interface StaticQueryProps {
-  site: {
-    siteMetadata: {
-      title: string;
-      description: string;
-      keywords: string;
-    };
-  };
-}
-
 const IndexLayout: React.FC = ({ children }) => (
   <StaticQuery<GatsbyTypes.IndexLayoutQueryQuery>
     query={graphql`
@@ -27,23 +17,24 @@ const IndexLayout: React.FC = ({ children }) => (
           siteMetadata {
             title
             description
+            keywords
           }
         }
       }
     `}
-    render={(data: StaticQueryProps) => (
+    render={(data) => (
       <LayoutRoot>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={data.site?.siteMetadata?.title}
           meta={[
             {
               name: 'description',
-              content: data.site.siteMetadata.description,
+              content: data.site?.siteMetadata?.description,
             },
-            { name: 'keywords', content: data.site.siteMetadata.keywords },
+            { name: 'keywords', content: data.site?.siteMetadata?.keywords },
           ]}
         />
-        <Header title={data.site.siteMetadata.title} />
+        <Header />
         <LayoutMain>{children}</LayoutMain>
       </LayoutRoot>
     )}
