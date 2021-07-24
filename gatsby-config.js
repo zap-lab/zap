@@ -2,23 +2,42 @@
 
 module.exports = {
   siteMetadata: {
-    title: '⚡️ Zap',
+    title: 'Zap',
     description: 'Simple and fast blog system.',
     keywords: 'gatsbyjs, gatsby, typescript, simple, blog',
     siteUrl: 'https://github.com/Mighty-Legion',
     author: {
-      name: 'Mighty Legion',
+      name: 'zap-lab',
       url: 'https://github.com/zap-lab/zap',
       email: ''
     }
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Zap`,
+        short_name: `Zap`,
+        start_url: `/`,
+        background_color: `#1c1d1c`,
+        theme_color: `#5901FF`,
+        display: `standalone`,
+        icon: 'src/images/logo.svg',
+      },
+    },
     'gatsby-plugin-resolve-src',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
         path: `${__dirname}/src/content`
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/images`
       }
     },
     {

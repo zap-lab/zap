@@ -1,15 +1,15 @@
 /* eslint-disable max-len */
 
 export const colors = {
-  brand: '#663399',
-  lilac: '#9d7cbf',
+  brand: '#5901ff',
   accent: '#ffb238',
-  success: '#37b635',
-  warning: '#ec1818',
   ui: {
-    bright: '#e0d6eb',
     light: '#f5f3f7',
-    whisper: '#fbfafc',
+    dark: '#1c1d1c',
+  },
+  header: {
+    light: '#1c1d1c',
+    dark: '#1c1d1c',
   },
   code: '#fcf6f0',
   gray: {
