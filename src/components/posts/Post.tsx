@@ -12,7 +12,8 @@ const Post: React.FC<PostProps> = ({ post }) =>
   post && post.frontmatter ? (
     <Container>
       <Link to={post.frontmatter.slug || ''}>
-        {post?.frontmatter?.title} ({post?.frontmatter?.date})
+        {post?.frontmatter?.title}
+        {`(${post?.frontmatter?.date})`}
       </Link>
     </Container>
   ) : (
