@@ -516,6 +516,7 @@ declare namespace GatsbyTypes {
     | 'childrenMarkdownRemark.id'
     | 'childrenMarkdownRemark.frontmatter.title'
     | 'childrenMarkdownRemark.frontmatter.date'
+    | 'childrenMarkdownRemark.frontmatter.slug'
     | 'childrenMarkdownRemark.frontmatter.image.sourceInstanceName'
     | 'childrenMarkdownRemark.frontmatter.image.absolutePath'
     | 'childrenMarkdownRemark.frontmatter.image.relativePath'
@@ -554,7 +555,6 @@ declare namespace GatsbyTypes {
     | 'childrenMarkdownRemark.frontmatter.image.childrenImageSharp'
     | 'childrenMarkdownRemark.frontmatter.image.id'
     | 'childrenMarkdownRemark.frontmatter.image.children'
-    | 'childrenMarkdownRemark.frontmatter.slug'
     | 'childrenMarkdownRemark.excerpt'
     | 'childrenMarkdownRemark.rawMarkdownBody'
     | 'childrenMarkdownRemark.fileAbsolutePath'
@@ -612,6 +612,7 @@ declare namespace GatsbyTypes {
     | 'childMarkdownRemark.id'
     | 'childMarkdownRemark.frontmatter.title'
     | 'childMarkdownRemark.frontmatter.date'
+    | 'childMarkdownRemark.frontmatter.slug'
     | 'childMarkdownRemark.frontmatter.image.sourceInstanceName'
     | 'childMarkdownRemark.frontmatter.image.absolutePath'
     | 'childMarkdownRemark.frontmatter.image.relativePath'
@@ -650,7 +651,6 @@ declare namespace GatsbyTypes {
     | 'childMarkdownRemark.frontmatter.image.childrenImageSharp'
     | 'childMarkdownRemark.frontmatter.image.id'
     | 'childMarkdownRemark.frontmatter.image.children'
-    | 'childMarkdownRemark.frontmatter.slug'
     | 'childMarkdownRemark.excerpt'
     | 'childMarkdownRemark.rawMarkdownBody'
     | 'childMarkdownRemark.fileAbsolutePath'
@@ -1691,6 +1691,7 @@ declare namespace GatsbyTypes {
     | 'id'
     | 'frontmatter.title'
     | 'frontmatter.date'
+    | 'frontmatter.slug'
     | 'frontmatter.image.sourceInstanceName'
     | 'frontmatter.image.absolutePath'
     | 'frontmatter.image.relativePath'
@@ -1769,7 +1770,6 @@ declare namespace GatsbyTypes {
     | 'frontmatter.image.internal.mediaType'
     | 'frontmatter.image.internal.owner'
     | 'frontmatter.image.internal.type'
-    | 'frontmatter.slug'
     | 'excerpt'
     | 'rawMarkdownBody'
     | 'fileAbsolutePath'
@@ -1904,8 +1904,8 @@ declare namespace GatsbyTypes {
   type MarkdownRemarkFrontmatter = {
     readonly title: Maybe<Scalars['String']>;
     readonly date: Maybe<Scalars['Date']>;
-    readonly image: Maybe<File>;
     readonly slug: Maybe<Scalars['String']>;
+    readonly image: Maybe<File>;
   };
 
   type MarkdownRemarkFrontmatter_dateArgs = {
@@ -1918,8 +1918,8 @@ declare namespace GatsbyTypes {
   type MarkdownRemarkFrontmatterFilterInput = {
     readonly title: Maybe<StringQueryOperatorInput>;
     readonly date: Maybe<DateQueryOperatorInput>;
-    readonly image: Maybe<FileFilterInput>;
     readonly slug: Maybe<StringQueryOperatorInput>;
+    readonly image: Maybe<FileFilterInput>;
   };
 
   type MarkdownRemarkGroupConnection = {
@@ -2146,15 +2146,15 @@ declare namespace GatsbyTypes {
     internalComponentName: Maybe<StringQueryOperatorInput>;
     componentChunkName: Maybe<StringQueryOperatorInput>;
     matchPath: Maybe<StringQueryOperatorInput>;
+    id: Maybe<StringQueryOperatorInput>;
+    parent: Maybe<NodeFilterInput>;
+    children: Maybe<NodeFilterListInput>;
+    internal: Maybe<InternalFilterInput>;
     isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
     context: Maybe<SitePageContextFilterInput>;
     pluginCreator: Maybe<SitePluginFilterInput>;
     pluginCreatorId: Maybe<StringQueryOperatorInput>;
     componentPath: Maybe<StringQueryOperatorInput>;
-    id: Maybe<StringQueryOperatorInput>;
-    parent: Maybe<NodeFilterInput>;
-    children: Maybe<NodeFilterListInput>;
-    internal: Maybe<InternalFilterInput>;
   };
 
   type Query_allSitePageArgs = {
@@ -2573,15 +2573,15 @@ declare namespace GatsbyTypes {
     readonly internalComponentName: Scalars['String'];
     readonly componentChunkName: Scalars['String'];
     readonly matchPath: Maybe<Scalars['String']>;
+    readonly id: Scalars['ID'];
+    readonly parent: Maybe<Node>;
+    readonly children: ReadonlyArray<Node>;
+    readonly internal: Internal;
     readonly isCreatedByStatefulCreatePages: Maybe<Scalars['Boolean']>;
     readonly context: Maybe<SitePageContext>;
     readonly pluginCreator: Maybe<SitePlugin>;
     readonly pluginCreatorId: Maybe<Scalars['String']>;
     readonly componentPath: Maybe<Scalars['String']>;
-    readonly id: Scalars['ID'];
-    readonly parent: Maybe<Node>;
-    readonly children: ReadonlyArray<Node>;
-    readonly internal: Internal;
   };
 
   type SitePageConnection = {
@@ -2623,6 +2623,92 @@ declare namespace GatsbyTypes {
     | 'internalComponentName'
     | 'componentChunkName'
     | 'matchPath'
+    | 'id'
+    | 'parent.id'
+    | 'parent.parent.id'
+    | 'parent.parent.parent.id'
+    | 'parent.parent.parent.children'
+    | 'parent.parent.children'
+    | 'parent.parent.children.id'
+    | 'parent.parent.children.children'
+    | 'parent.parent.internal.content'
+    | 'parent.parent.internal.contentDigest'
+    | 'parent.parent.internal.description'
+    | 'parent.parent.internal.fieldOwners'
+    | 'parent.parent.internal.ignoreType'
+    | 'parent.parent.internal.mediaType'
+    | 'parent.parent.internal.owner'
+    | 'parent.parent.internal.type'
+    | 'parent.children'
+    | 'parent.children.id'
+    | 'parent.children.parent.id'
+    | 'parent.children.parent.children'
+    | 'parent.children.children'
+    | 'parent.children.children.id'
+    | 'parent.children.children.children'
+    | 'parent.children.internal.content'
+    | 'parent.children.internal.contentDigest'
+    | 'parent.children.internal.description'
+    | 'parent.children.internal.fieldOwners'
+    | 'parent.children.internal.ignoreType'
+    | 'parent.children.internal.mediaType'
+    | 'parent.children.internal.owner'
+    | 'parent.children.internal.type'
+    | 'parent.internal.content'
+    | 'parent.internal.contentDigest'
+    | 'parent.internal.description'
+    | 'parent.internal.fieldOwners'
+    | 'parent.internal.ignoreType'
+    | 'parent.internal.mediaType'
+    | 'parent.internal.owner'
+    | 'parent.internal.type'
+    | 'children'
+    | 'children.id'
+    | 'children.parent.id'
+    | 'children.parent.parent.id'
+    | 'children.parent.parent.children'
+    | 'children.parent.children'
+    | 'children.parent.children.id'
+    | 'children.parent.children.children'
+    | 'children.parent.internal.content'
+    | 'children.parent.internal.contentDigest'
+    | 'children.parent.internal.description'
+    | 'children.parent.internal.fieldOwners'
+    | 'children.parent.internal.ignoreType'
+    | 'children.parent.internal.mediaType'
+    | 'children.parent.internal.owner'
+    | 'children.parent.internal.type'
+    | 'children.children'
+    | 'children.children.id'
+    | 'children.children.parent.id'
+    | 'children.children.parent.children'
+    | 'children.children.children'
+    | 'children.children.children.id'
+    | 'children.children.children.children'
+    | 'children.children.internal.content'
+    | 'children.children.internal.contentDigest'
+    | 'children.children.internal.description'
+    | 'children.children.internal.fieldOwners'
+    | 'children.children.internal.ignoreType'
+    | 'children.children.internal.mediaType'
+    | 'children.children.internal.owner'
+    | 'children.children.internal.type'
+    | 'children.internal.content'
+    | 'children.internal.contentDigest'
+    | 'children.internal.description'
+    | 'children.internal.fieldOwners'
+    | 'children.internal.ignoreType'
+    | 'children.internal.mediaType'
+    | 'children.internal.owner'
+    | 'children.internal.type'
+    | 'internal.content'
+    | 'internal.contentDigest'
+    | 'internal.description'
+    | 'internal.fieldOwners'
+    | 'internal.ignoreType'
+    | 'internal.mediaType'
+    | 'internal.owner'
+    | 'internal.type'
     | 'isCreatedByStatefulCreatePages'
     | 'context.slug'
     | 'pluginCreator.id'
@@ -2709,6 +2795,7 @@ declare namespace GatsbyTypes {
     | 'pluginCreator.pluginOptions.isTSX'
     | 'pluginCreator.pluginOptions.jsxPragma'
     | 'pluginCreator.pluginOptions.allExtensions'
+    | 'pluginCreator.pluginOptions.outputPath'
     | 'pluginCreator.pluginOptions.base64Width'
     | 'pluginCreator.pluginOptions.stripMetadata'
     | 'pluginCreator.pluginOptions.defaultQuality'
@@ -2734,93 +2821,7 @@ declare namespace GatsbyTypes {
     | 'pluginCreator.packageJson.peerDependencies.version'
     | 'pluginCreator.packageJson.keywords'
     | 'pluginCreatorId'
-    | 'componentPath'
-    | 'id'
-    | 'parent.id'
-    | 'parent.parent.id'
-    | 'parent.parent.parent.id'
-    | 'parent.parent.parent.children'
-    | 'parent.parent.children'
-    | 'parent.parent.children.id'
-    | 'parent.parent.children.children'
-    | 'parent.parent.internal.content'
-    | 'parent.parent.internal.contentDigest'
-    | 'parent.parent.internal.description'
-    | 'parent.parent.internal.fieldOwners'
-    | 'parent.parent.internal.ignoreType'
-    | 'parent.parent.internal.mediaType'
-    | 'parent.parent.internal.owner'
-    | 'parent.parent.internal.type'
-    | 'parent.children'
-    | 'parent.children.id'
-    | 'parent.children.parent.id'
-    | 'parent.children.parent.children'
-    | 'parent.children.children'
-    | 'parent.children.children.id'
-    | 'parent.children.children.children'
-    | 'parent.children.internal.content'
-    | 'parent.children.internal.contentDigest'
-    | 'parent.children.internal.description'
-    | 'parent.children.internal.fieldOwners'
-    | 'parent.children.internal.ignoreType'
-    | 'parent.children.internal.mediaType'
-    | 'parent.children.internal.owner'
-    | 'parent.children.internal.type'
-    | 'parent.internal.content'
-    | 'parent.internal.contentDigest'
-    | 'parent.internal.description'
-    | 'parent.internal.fieldOwners'
-    | 'parent.internal.ignoreType'
-    | 'parent.internal.mediaType'
-    | 'parent.internal.owner'
-    | 'parent.internal.type'
-    | 'children'
-    | 'children.id'
-    | 'children.parent.id'
-    | 'children.parent.parent.id'
-    | 'children.parent.parent.children'
-    | 'children.parent.children'
-    | 'children.parent.children.id'
-    | 'children.parent.children.children'
-    | 'children.parent.internal.content'
-    | 'children.parent.internal.contentDigest'
-    | 'children.parent.internal.description'
-    | 'children.parent.internal.fieldOwners'
-    | 'children.parent.internal.ignoreType'
-    | 'children.parent.internal.mediaType'
-    | 'children.parent.internal.owner'
-    | 'children.parent.internal.type'
-    | 'children.children'
-    | 'children.children.id'
-    | 'children.children.parent.id'
-    | 'children.children.parent.children'
-    | 'children.children.children'
-    | 'children.children.children.id'
-    | 'children.children.children.children'
-    | 'children.children.internal.content'
-    | 'children.children.internal.contentDigest'
-    | 'children.children.internal.description'
-    | 'children.children.internal.fieldOwners'
-    | 'children.children.internal.ignoreType'
-    | 'children.children.internal.mediaType'
-    | 'children.children.internal.owner'
-    | 'children.children.internal.type'
-    | 'children.internal.content'
-    | 'children.internal.contentDigest'
-    | 'children.internal.description'
-    | 'children.internal.fieldOwners'
-    | 'children.internal.ignoreType'
-    | 'children.internal.mediaType'
-    | 'children.internal.owner'
-    | 'children.internal.type'
-    | 'internal.content'
-    | 'internal.contentDigest'
-    | 'internal.description'
-    | 'internal.fieldOwners'
-    | 'internal.ignoreType'
-    | 'internal.mediaType'
-    | 'internal.owner'
-    | 'internal.type';
+    | 'componentPath';
 
   type SitePageFilterInput = {
     readonly path: Maybe<StringQueryOperatorInput>;
@@ -2828,15 +2829,15 @@ declare namespace GatsbyTypes {
     readonly internalComponentName: Maybe<StringQueryOperatorInput>;
     readonly componentChunkName: Maybe<StringQueryOperatorInput>;
     readonly matchPath: Maybe<StringQueryOperatorInput>;
+    readonly id: Maybe<StringQueryOperatorInput>;
+    readonly parent: Maybe<NodeFilterInput>;
+    readonly children: Maybe<NodeFilterListInput>;
+    readonly internal: Maybe<InternalFilterInput>;
     readonly isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
     readonly context: Maybe<SitePageContextFilterInput>;
     readonly pluginCreator: Maybe<SitePluginFilterInput>;
     readonly pluginCreatorId: Maybe<StringQueryOperatorInput>;
     readonly componentPath: Maybe<StringQueryOperatorInput>;
-    readonly id: Maybe<StringQueryOperatorInput>;
-    readonly parent: Maybe<NodeFilterInput>;
-    readonly children: Maybe<NodeFilterListInput>;
-    readonly internal: Maybe<InternalFilterInput>;
   };
 
   type SitePageGroupConnection = {
@@ -3040,6 +3041,7 @@ declare namespace GatsbyTypes {
     | 'pluginOptions.isTSX'
     | 'pluginOptions.jsxPragma'
     | 'pluginOptions.allExtensions'
+    | 'pluginOptions.outputPath'
     | 'pluginOptions.base64Width'
     | 'pluginOptions.stripMetadata'
     | 'pluginOptions.defaultQuality'
@@ -3201,6 +3203,7 @@ declare namespace GatsbyTypes {
     readonly isTSX: Maybe<Scalars['Boolean']>;
     readonly jsxPragma: Maybe<Scalars['String']>;
     readonly allExtensions: Maybe<Scalars['Boolean']>;
+    readonly outputPath: Maybe<Scalars['String']>;
     readonly base64Width: Maybe<Scalars['Int']>;
     readonly stripMetadata: Maybe<Scalars['Boolean']>;
     readonly defaultQuality: Maybe<Scalars['Int']>;
@@ -3245,6 +3248,7 @@ declare namespace GatsbyTypes {
     readonly isTSX: Maybe<BooleanQueryOperatorInput>;
     readonly jsxPragma: Maybe<StringQueryOperatorInput>;
     readonly allExtensions: Maybe<BooleanQueryOperatorInput>;
+    readonly outputPath: Maybe<StringQueryOperatorInput>;
     readonly base64Width: Maybe<IntQueryOperatorInput>;
     readonly stripMetadata: Maybe<BooleanQueryOperatorInput>;
     readonly defaultQuality: Maybe<IntQueryOperatorInput>;
