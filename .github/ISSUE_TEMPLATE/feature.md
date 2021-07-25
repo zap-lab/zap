@@ -9,7 +9,7 @@ assignees: ''
 
 # Features
 
-## ArticleDescription
+## Description
 
 ```plaintext
 Describe the feature details

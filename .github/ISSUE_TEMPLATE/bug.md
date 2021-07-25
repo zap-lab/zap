@@ -16,7 +16,7 @@ assignees: ''
 3. Type "hello" text in the textarea.
 4. Bug will be occured.
 
-## ArticleDescription
+## Description
 
 ```plaintext
 Describe the feature details
