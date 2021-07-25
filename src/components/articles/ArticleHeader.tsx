@@ -12,6 +12,7 @@ interface ArticleHeaderProps {
 }
 
 const Container = styled.p({
+  marginBottom: 0,
   a: {
     color: colors.light.fg.primary,
   },

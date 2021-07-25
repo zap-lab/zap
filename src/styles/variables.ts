@@ -10,6 +10,9 @@ export const colors = {
       primary: '#222222',
       secondary: '#555555',
     },
+    borders: {
+      normal: '#c4c4c4',
+    },
     header: {
       bg: '#1c1d1c',
     },
@@ -22,6 +25,9 @@ export const colors = {
     fg: {
       primary: '#ffffff',
       secondary: '#bbbbbb',
+    },
+    borders: {
+      normal: '#242724',
     },
     header: {
       bg: '#1c1d1c',

@@ -17,6 +17,17 @@ const IndexPage: React.FC = () => {
             frontmatter {
               date(formatString: "YYYY-MM-DD")
               title
+              image {
+                src {
+                  publicURL
+                  childImageSharp {
+                    fluid(maxWidth: 320) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+                alt
+              }
             }
             fields {
               slug

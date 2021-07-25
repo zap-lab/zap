@@ -8,7 +8,7 @@ interface TitleProps {
 
 const Container = styled.h3({
   display: 'inline',
-  fontSize: `${dimensions.headingSizes.h3}rem`,
+  fontSize: `${dimensions.headingSizes.h4}rem`,
 });
 
 const ArticleTitle: React.FC<TitleProps> = ({ children }) => (
