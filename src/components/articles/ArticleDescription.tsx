@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { colors } from 'styles/variables';
+import { colors, dimensions } from 'styles/variables';
 
 interface Props {
   children?: React.ReactNode;
@@ -9,7 +9,7 @@ interface Props {
 const Container = styled.div({
   fontSize: '1rem',
   color: colors.light.fg.secondary,
-  lineHeight: 1.175,
+  lineHeight: dimensions.lineHeight.normal,
   maxHeight: 200,
   textOverflow: 'ellipsis',
   overflow: 'hidden',

@@ -83,8 +83,7 @@ export const dimensions = {
     h6: 1.16,
   },
   lineHeight: {
-    regular: 1.45,
-    heading: 1.2,
+    normal: 1.175,
   },
   paddings: {
     sm: 20,
