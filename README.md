@@ -8,32 +8,78 @@
   <a href="https://codeclimate.com/github/zap-lab/zap/test_coverage"><img src="https://api.codeclimate.com/v1/badges/d797b7556019a23cf5bc/test_coverage" /></a>
 </p>
 
-# Table of contents
-
-- [Overview](#overview)
-
-   - [What is zap?](#what-is-zap?)
-   - [Getting started](#getting-started)
-
 # Overview
 
 ## What is zap?
 
+Zap is a fast, lightweight, developer-specific blog open source built on top of Gatsby. The principles for developing Zap are as follows.
+
+- It should be incredibly fast, the content should load within the user's browser in 50ms.
+- It should be aesthetic. Readability is the most important principle, and for this we aim for simple functionality and UI.
+- All information in the Zap project should be accessible to anyone. This applies to everything including design, decision, and remaining tasks.
+- It should be easy, easy to install, easy to contribute, and easy to use.
+- It must be multi-platform compatible.
+- It must conform to the Modern Web Specification. This includes PWA, AMP, a11y, and means to prefer video instead of gif, svg instead of png, icon font set instead of svg icon whenever possible. 
+
 ## Getting started
 
-### Install
-
-First, You need `gatsby-cli` to use gatsby features. Type the following command on your terminal.
+If you type as follows, You can see the project structure.
 
 ```bash
-// yarn
-yarn global add gatsby-cli
-
-// npm
-npm install -g gatsby-cli
+tree -L 2 -I 'node_modules' .
 ```
 
-Then, run following command
+Below is the project structure of zap.
+
+```bash
+zap/
+|-- LICENSE            # project license (MIT)
+|-- README.md          # project main document
+|-- assets             # document assets (images)
+|   `-- logo.svg
+|-- commitlint.config.js
+|-- gatsby-browser.js
+|-- gatsby-config.js
+|-- gatsby-node.js
+|-- gatsby-ssr.js
+|-- jest.config.js     # jest test settings
+|-- package.json       # dependency list, yarn scripts
+|-- node_modules/      # dependency packages
+|-- public             # gatsby static folder
+|   |-- chunk-map.json
+|   |-- favicon-32x32.png
+|   |-- favicon.svg
+|   |-- icons
+|   |-- manifest.webmanifest
+|   |-- page-data
+|   |-- render-page.js
+|   |-- render-page.js.map
+|   |-- static
+|   `-- webpack.stats.json
+|-- src                # project main sources
+|   |-- __generated__
+|   |-- components
+|   |-- content
+|   |-- images
+|   |-- layouts
+|   |-- pages
+|   |-- stories
+|   |-- styles
+|   |-- templates
+|   `-- typings.d.ts
+|-- tsconfig.json      # typescript configuration
+`-- yarn.lock          # package lock files
+```
+
+### Installation
+
+This project uses [yarn](https://yarnpkg.com/) as a package manager, If you don't have yarn, Follow [this link](https://yarnpkg.com/getting-started/install) to get download one.
+
+```bash
+yarn install
+```
+
+Then, run following command.
 
 ```bash
 yarn start
@@ -43,7 +89,47 @@ yarn start
 
 ## Testing
 
+This project uses [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/), If you want to run test, Run as follows.
+
+```bash
+yarn test
+```
+
+## Coverage
+
+For coverage, You can run as follows.
+
+```bash
+yarn test:coverage
+```
+
+## Linting
+
+This project uses two lint systems as follows.
+
+- eslint ([link](https://eslint.org/))
+- prettier ([link](https://prettier.io/))
+
+And, if you commit the husky will handle the lint automatically.
+
+- See husky setting
+
+If you want to run the lint manually, You can run as follows.
+
+```bash
+# eslint
+yarn lint
+
+# prettier
+yarn format
+```
+
 ## Convention
+
+This project has following conventions.
+
+- Conventional Commits ([link](https://www.conventionalcommits.org/en/v1.0.0/))
+- airbnb-typescript ([link](https://www.npmjs.com/package/eslint-config-airbnb-typescript))
 
 # License
 
@@ -51,7 +137,7 @@ zap is under MIT license
 
 MIT License
 
-Copyright (c) 2020 Mighty-Legion
+Copyright (c) 2020-2021 zap-lab
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
