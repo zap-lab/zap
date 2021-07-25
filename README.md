@@ -1,5 +1,12 @@
-<h1 align="center">⚡️ Zap</h1>
+<p align="center">
+  <img width="140" src="assets/logo.svg" alt="Zap Logo" />
+</p>
+<h1 align="center">⚡ Zap</h1>
 <p align="center">Fast and lightweight blog research project</p>
+<p align="center">
+  <a href="https://codeclimate.com/github/zap-lab/zap/maintainability"><img src="https://api.codeclimate.com/v1/badges/d797b7556019a23cf5bc/maintainability" /></a>
+  <a href="https://codeclimate.com/github/zap-lab/zap/test_coverage"><img src="https://api.codeclimate.com/v1/badges/d797b7556019a23cf5bc/test_coverage" /></a>
+</p>
 
 # Table of contents
 
