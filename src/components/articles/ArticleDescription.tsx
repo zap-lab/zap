@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { colors } from 'styles/variables';
 
 interface Props {
-  description: string;
+  children?: React.ReactNode;
 }
 
 const Container = styled.div({
   fontSize: '1rem',
-  color: '#777777',
+  color: colors.light.fg.secondary,
   lineHeight: 1.175,
   maxHeight: 200,
   textOverflow: 'ellipsis',
@@ -15,8 +16,8 @@ const Container = styled.div({
   wordBreak: 'break-all',
 });
 
-const Description: React.FC<Props> = ({ description }) => (
-  <Container>{description}</Container>
+const ArticleDescription: React.FC<Props> = ({ children }) => (
+  <Container>{children}</Container>
 );
 
-export default Description;
+export default ArticleDescription;

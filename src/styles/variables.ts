@@ -64,20 +64,30 @@ export const widths = {
 
 export const dimensions = {
   fontSize: {
-    regular: 16,
-    large: 18,
+    sm: 12.8,
+    md: 16,
+    lg: 18,
   },
   headingSizes: {
-    h1: 2.441,
-    h2: 1.953,
-    h3: 1.563,
-    h4: 1.25,
+    h1: 3.052,
+    h2: 2.441,
+    h3: 1.953,
+    h4: 1.563,
+    h5: 1.25,
+    h6: 1.16,
   },
   lineHeight: {
     regular: 1.45,
     heading: 1.2,
   },
-  containerPadding: 40,
+  paddings: {
+    sm: 20,
+    md: 40,
+  },
+  margins: {
+    sm: 20,
+    md: 40,
+  },
 };
 
 export const heights = {

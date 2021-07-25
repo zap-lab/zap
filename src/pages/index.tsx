@@ -15,7 +15,7 @@ const IndexPage: React.FC = () => {
             id
             excerpt(pruneLength: 250)
             frontmatter {
-              date(formatString: "MMMM DD, YYYY")
+              date(formatString: "YYYY-MM-DD")
               title
             }
             fields {

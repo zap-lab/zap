@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Link } from 'gatsby';
 import { colors, dimensions } from 'styles/variables';
-import Title from 'components/articles/Title';
+import ArticleHeader from 'components/articles/ArticleHeader';
+import ArticleDescription from 'components/articles/ArticleDescription';
 
 const Container = styled.div({
-  padding: dimensions.containerPadding,
+  padding: dimensions.paddings.md,
   backgroundColor: colors.light.bg.primary,
   borderRadius: 10,
 });
@@ -17,12 +17,12 @@ interface PostProps {
 const Article: React.FC<PostProps> = ({ post }) =>
   post && post.frontmatter && post.fields ? (
     <Container>
-      <Title>
-        <Link to={post.fields.slug || ''}>
-          {post?.frontmatter?.title}
-          {`(${post?.frontmatter?.date})`}
-        </Link>
-      </Title>
+      <ArticleHeader
+        title={post.frontmatter.title || ''}
+        date={post.frontmatter.date || ''}
+        slug={post.fields.slug || ''}
+      />
+      <ArticleDescription>{post.excerpt}</ArticleDescription>
     </Container>
   ) : (
     <></>

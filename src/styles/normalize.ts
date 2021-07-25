@@ -13,7 +13,7 @@ export default `
   }
 
   html {
-    font-size: ${dimensions.fontSize.regular}px !important;
+    font-size: ${dimensions.fontSize.md}px !important;
     line-height: ${dimensions.lineHeight.regular} !important;
   }
 
