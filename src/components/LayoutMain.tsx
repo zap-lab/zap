@@ -4,7 +4,7 @@ import { colors } from 'styles/variables';
 
 const StyledLayoutMain = styled.main({
   display: 'flex',
-  backgroundColor: colors.bg.grey,
+  backgroundColor: colors.light.bg.secondary,
   flexDirection: 'column',
   flex: 1,
 });

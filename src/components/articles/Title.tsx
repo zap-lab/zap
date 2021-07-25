@@ -1,15 +1,21 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { colors } from 'styles/variables';
 
 interface Props {
-  title: string;
+  children?: React.ReactNode;
 }
 
 const Container = styled.h3({
   fontSize: '1.375rem',
-  color: '#555555',
+  marginTop: 0,
+  a: {
+    color: colors.light.fg.primary,
+  },
 });
 
-const Title: React.FC<Props> = ({ title }) => <Container>{title}</Container>;
+const Title: React.FC<Props> = ({ children }) => (
+  <Container>{children}</Container>
+);
 
 export default Title;

@@ -10,8 +10,7 @@ import getEmSize from 'styles/getEmSize';
 
 const StyledHeader = styled.header({
   height: `${heights.header}px`,
-  padding: `0 ${dimensions.containerPadding}rem`,
-  backgroundColor: colors.header.light,
+  backgroundColor: colors.light.header.bg,
   color: transparentize(0.5, colors.white),
 });
 

@@ -1,25 +1,43 @@
 /* eslint-disable max-len */
 
 export const colors = {
-  brand: '#5901ff',
-  accent: '#ffb238',
+  light: {
+    bg: {
+      primary: '#ffffff',
+      secondary: '#f1f1f1',
+    },
+    fg: {
+      primary: '#222222',
+      secondary: '#555555',
+    },
+    header: {
+      bg: '#1c1d1c',
+    },
+  },
+  dark: {
+    bg: {
+      primary: '#1c1d1c',
+      secondary: '#242724',
+    },
+    fg: {
+      primary: '#ffffff',
+      secondary: '#bbbbbb',
+    },
+    header: {
+      bg: '#1c1d1c',
+    },
+  },
   ui: {
     light: '#f5f3f7',
     dark: '#222222',
   },
-  header: {
-    light: '#1c1d1c',
-    dark: '#1c1d1c',
-  },
-  code: '#fcf6f0',
-  bg: {
-    grey: '#f1f1f1',
-  },
+  brand: '#5901ff',
+  accent: '#ffb238',
   opacity: {
     whisper: 0.05,
   },
-  white: '#fff',
-  black: '#000',
+  white: '#ffffff',
+  black: '#000000',
 };
 
 export const fonts = {
@@ -59,7 +77,7 @@ export const dimensions = {
     regular: 1.45,
     heading: 1.2,
   },
-  containerPadding: 1.5,
+  containerPadding: 40,
 };
 
 export const heights = {
