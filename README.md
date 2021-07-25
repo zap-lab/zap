@@ -31,7 +31,7 @@ tree -L 2 -I 'node_modules' .
 
 Below is the project structure of zap.
 
-```bash
+```plaintext
 zap/
 |-- LICENSE            # project license (MIT)
 |-- README.md          # project main document
