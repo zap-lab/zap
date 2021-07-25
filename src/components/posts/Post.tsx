@@ -9,9 +9,9 @@ interface PostProps {
 }
 
 const Post: React.FC<PostProps> = ({ post }) =>
-  post && post.frontmatter ? (
+  post && post.frontmatter && post.fields ? (
     <Container>
-      <Link to={post.frontmatter.slug || ''}>
+      <Link to={post.fields.slug || ''}>
         {post?.frontmatter?.title}
         {`(${post?.frontmatter?.date})`}
       </Link>
