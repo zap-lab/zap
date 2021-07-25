@@ -16,8 +16,10 @@ const IndexPage: React.FC = () => {
             excerpt(pruneLength: 250)
             frontmatter {
               date(formatString: "MMMM DD, YYYY")
-              slug
               title
+            }
+            fields {
+              slug
             }
           }
         }
