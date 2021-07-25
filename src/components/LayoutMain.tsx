@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { colors } from 'styles/variables';
 
 const StyledLayoutMain = styled.main({
   display: 'flex',
+  backgroundColor: colors.bg.grey,
   flexDirection: 'column',
   flex: 1,
 });

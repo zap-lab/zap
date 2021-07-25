@@ -74,10 +74,10 @@ export default `
     tr {
       &:nth-of-type(odd) {
         td {
-          background-color: ${colors.ui.whisper};
+          background-color: rgba(${colors.brand}, ${colors.opacity.whisper});
         }
         tr {
-          background-color: ${colors.ui.whisper};
+          background-color: rgba(${colors.brand}, ${colors.opacity.whisper});
         }
       }
     }
@@ -144,7 +144,7 @@ export default `
     margin: .8rem 0;
     padding: .5rem 1rem;
     border-left: .25rem solid ${colors.ui.light};
-    color: ${colors.gray.calm};
+    color: ${colors.ui.dark};
 
     p {
       &:last-child {

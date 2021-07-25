@@ -3,18 +3,21 @@ import styled from '@emotion/styled';
 import { transparentize } from 'polished';
 import { Link } from 'gatsby';
 
-import { heights, dimensions, colors } from 'styles/variables';
+import { colors, dimensions, heights, widths } from 'styles/variables';
 import Container from 'components/Container';
+import logo from 'images/logo.svg';
+import getEmSize from 'styles/getEmSize';
 
 const StyledHeader = styled.header({
   height: `${heights.header}px`,
   padding: `0 ${dimensions.containerPadding}rem`,
-  backgroundColor: colors.brand,
+  backgroundColor: colors.header.light,
   color: transparentize(0.5, colors.white),
 });
 
 const HeaderInner = styled(Container)({
   display: 'flex',
+  maxWidth: `${getEmSize(widths.xl)}em`,
   flexDirection: 'row',
   alignItems: 'center',
   height: '100%',
@@ -22,21 +25,23 @@ const HeaderInner = styled(Container)({
 
 const HomepageLink = styled(Link)({
   color: colors.white,
-  fontSize: '1.5rem',
+  fontSize: 0,
   fontWeight: 600,
   '&:hover, &:focus': {
     textDecoration: 'none',
   },
 });
 
-interface HeaderProps {
-  title: string;
-}
+const Logo = styled.img({
+  width: 45,
+});
 
-const Header: React.FC<HeaderProps> = ({ title }) => (
+const Header: React.FC = () => (
   <StyledHeader>
     <HeaderInner>
-      <HomepageLink to="/">{title}</HomepageLink>
+      <HomepageLink to="/">
+        <Logo src={logo} alt="Zap" />
+      </HomepageLink>
     </HeaderInner>
   </StyledHeader>
 );

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import LayoutMain from './LayoutMain';
+import LayoutMain from 'components/LayoutMain';
 import 'jest';
 
 describe('LayoutMain', () => {
