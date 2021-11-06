@@ -24,17 +24,17 @@ interface PostProps {
 const Article: React.FC<PostProps> = ({ post }) =>
   post && post.frontmatter && post.fields ? (
     <Container>
-      {post.frontmatter.image?.src ? (
+      {post.frontmatter.image?.src && (
         <ArticleImage
           file={post.frontmatter.image.src}
           alt={post.frontmatter.image.alt}
         />
-      ) : null}
+      )}
       <ArticleContent>
         <ArticleHeader
-          title={post.frontmatter.title || ''}
-          date={post.frontmatter.date || ''}
-          slug={post.fields.slug || ''}
+          title={post.frontmatter.title ?? ''}
+          date={post.frontmatter.date ?? ''}
+          slug={post.fields.slug ?? ''}
         />
         <ArticleDescription>{post.excerpt}</ArticleDescription>
       </ArticleContent>
