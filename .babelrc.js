@@ -5,5 +5,8 @@ module.exports = {
     '@babel/preset-react',
     '@babel/preset-typescript',
   ],
-  plugins: ['transform-class-properties'],
+  plugins: [
+    ['@babel/plugin-proposal-class-properties', { loose: true }],
+    'transform-class-properties',
+  ],
 };
