@@ -19,6 +19,7 @@
     "start": "yarn dev",
     "precommit": "lint-staged",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "tsc": "tsc",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"

@@ -6,6 +6,9 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+# Gatsby Typegen
+src/__generated__/
+
 # Jetbrains
 .idea/
 
