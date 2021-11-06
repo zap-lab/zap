@@ -2,7 +2,9 @@
 title: Hello, Gatsby!
 date: 2021-07-25
 slug: hello-gatsby
-image: ./images/gatsby-cover.jpeg
+image:
+  src: ./images/gatsby-cover.jpeg
+  alt: "gatsby"
 ---
 
 he Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, the novel depicts first-person narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby and Gatsby's obsession to reunite with his former lover, Daisy Buchanan.

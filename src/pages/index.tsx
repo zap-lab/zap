@@ -3,7 +3,7 @@ import React from 'react';
 import Page from 'components/Page';
 import Container from 'components/Container';
 import IndexLayout from 'layouts';
-import Post from 'components/posts/Post';
+import Article from 'components/articles/Article';
 import { graphql, useStaticQuery } from 'gatsby';
 
 const IndexPage: React.FC = () => {
@@ -15,8 +15,19 @@ const IndexPage: React.FC = () => {
             id
             excerpt(pruneLength: 250)
             frontmatter {
-              date(formatString: "MMMM DD, YYYY")
+              date(formatString: "YYYY-MM-DD")
               title
+              image {
+                src {
+                  publicURL
+                  childImageSharp {
+                    fluid(maxWidth: 320) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+                alt
+              }
             }
             fields {
               slug
@@ -27,7 +38,7 @@ const IndexPage: React.FC = () => {
     }
   `);
   const Posts = data.allMarkdownRemark.edges.map(({ node }) => (
-    <Post key={node.id} post={node} />
+    <Article key={node.id} post={node} />
   ));
   return (
     <IndexLayout>

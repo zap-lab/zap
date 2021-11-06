@@ -1,17 +1,17 @@
 import React from 'react';
-import Title from 'components/articles//Title';
-import Description from 'components/articles/Description';
+import styled from '@emotion/styled';
 
-interface Props {
-  title: string;
-  description: string;
+interface ArticleContentProps {
+  children?: React.ReactNode;
 }
 
-const ArticleContent: React.FC<Props> = ({ title, description }) => (
-  <>
-    <Title title={title} />
-    <Description description={description} />
-  </>
+const Container = styled.div({
+  display: 'flex',
+  flexDirection: 'column',
+});
+
+const ArticleContent: React.FC<ArticleContentProps> = ({ children }) => (
+  <Container>{children}</Container>
 );
 
 export default ArticleContent;

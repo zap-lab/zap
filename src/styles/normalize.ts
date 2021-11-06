@@ -13,8 +13,8 @@ export default `
   }
 
   html {
-    font-size: ${dimensions.fontSize.regular}px !important;
-    line-height: ${dimensions.lineHeight.regular} !important;
+    font-size: ${dimensions.fontSize.md}px;
+    line-height: ${dimensions.lineHeight.normal};
   }
 
   body {
@@ -88,7 +88,7 @@ export default `
     margin-bottom: .5rem;
     color: ${colors.black};
     font-weight: 600;
-    line-height: ${dimensions.lineHeight.heading};
+    line-height: ${dimensions.lineHeight.normal};
     text-rendering: optimizeLegibility;
   }
 

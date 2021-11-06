@@ -7,8 +7,7 @@ const StyledPage = styled.div({
   display: 'block',
   flex: 1,
   position: 'relative',
-  padding: `${dimensions.containerPadding}rem`,
-  marginBottom: '3rem',
+  padding: dimensions.paddings.md,
 });
 
 interface PageProps {
