@@ -16,6 +16,9 @@ export const colors = {
     header: {
       bg: '#1c1d1c',
     },
+    footer: {
+      bg: '#e6e8e6',
+    },
   },
   dark: {
     bg: {
@@ -31,6 +34,9 @@ export const colors = {
     },
     header: {
       bg: '#1c1d1c',
+    },
+    footer: {
+      bg: '#e6e8e6',
     },
   },
   ui: {
@@ -97,4 +103,5 @@ export const dimensions = {
 
 export const heights = {
   header: 60,
+  footer: 100,
 };

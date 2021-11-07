@@ -6,6 +6,7 @@ import 'modern-normalize';
 import 'styles/normalize';
 
 import Header from 'components/Header';
+import Footer from 'components/Footer';
 import LayoutRoot from 'components/LayoutRoot';
 import LayoutMain from 'components/LayoutMain';
 
@@ -36,6 +37,7 @@ const IndexLayout: React.FC = ({ children }) => (
         />
         <Header />
         <LayoutMain>{children}</LayoutMain>
+        <Footer />
       </LayoutRoot>
     )}
   />
