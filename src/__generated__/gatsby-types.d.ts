@@ -261,9 +261,6 @@ type Site = Node & {
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
   readonly port: Maybe<Scalars['Int']>;
   readonly host: Maybe<Scalars['String']>;
-  readonly polyfill: Maybe<Scalars['Boolean']>;
-  readonly pathPrefix: Maybe<Scalars['String']>;
-  readonly jsxRuntime: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly parent: Maybe<Node>;
   readonly children: ReadonlyArray<Node>;
@@ -825,9 +822,6 @@ type Query_siteArgs = {
   siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
   port: Maybe<IntQueryOperatorInput>;
   host: Maybe<StringQueryOperatorInput>;
-  polyfill: Maybe<BooleanQueryOperatorInput>;
-  pathPrefix: Maybe<StringQueryOperatorInput>;
-  jsxRuntime: Maybe<StringQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
@@ -2024,9 +2018,6 @@ type SiteFieldsEnum =
   | 'siteMetadata.author.email'
   | 'port'
   | 'host'
-  | 'polyfill'
-  | 'pathPrefix'
-  | 'jsxRuntime'
   | 'id'
   | 'parent.id'
   | 'parent.parent.id'
@@ -2160,9 +2151,6 @@ type SiteFilterInput = {
   readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
   readonly port: Maybe<IntQueryOperatorInput>;
   readonly host: Maybe<StringQueryOperatorInput>;
-  readonly polyfill: Maybe<BooleanQueryOperatorInput>;
-  readonly pathPrefix: Maybe<StringQueryOperatorInput>;
-  readonly jsxRuntime: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
@@ -3479,25 +3467,6 @@ type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
-type GatsbyImageSharpFluidFragment = Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
-
-type staticCUserskenneDesktopzapsrcpagesindexTsx1200869781QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type staticCUserskenneDesktopzapsrcpagesindexTsx1200869781Query = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<MarkdownRemark, 'id' | 'excerpt'>
-        & { readonly frontmatter: Maybe<(
-          Pick<MarkdownRemarkFrontmatter, 'date' | 'title'>
-          & { readonly image: Maybe<(
-            Pick<MarkdownRemarkFrontmatterImage, 'alt'>
-            & { readonly src: Maybe<(
-              Pick<File, 'publicURL'>
-              & { readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluidFragment> }> }
-            )> }
-          )> }
-        )>, readonly fields: Maybe<Pick<MarkdownRemarkFields, 'slug'>> }
-      ) }> } };
-
 type IndexLayoutQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3514,6 +3483,8 @@ type GatsbyImageSharpFixed_withWebp_tracedSVGFragment = Pick<ImageSharpFixed, 't
 type GatsbyImageSharpFixed_noBase64Fragment = Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet'>;
 
 type GatsbyImageSharpFixed_withWebp_noBase64Fragment = Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
+
+type GatsbyImageSharpFluidFragment = Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluidLimitPresentationSizeFragment = { maxHeight: ImageSharpFluid['presentationHeight'], maxWidth: ImageSharpFluid['presentationWidth'] };
 

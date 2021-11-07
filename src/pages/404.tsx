@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import Page from 'components/Page';
 import Container from 'components/Container';
-import IndexLayout from 'layouts';
+import IndexLayout from 'layouts/IndexLayout';
 
 const NotFoundPage: React.FC = () => (
   <IndexLayout>

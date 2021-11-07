@@ -2,7 +2,7 @@ import React from 'react';
 
 import Page from 'components/Page';
 import Container from 'components/Container';
-import IndexLayout from 'layouts';
+import IndexLayout from 'layouts/IndexLayout';
 import Article from 'components/articles/Article';
 import { graphql, useStaticQuery } from 'gatsby';
 

@@ -7,7 +7,7 @@ interface ArticleHeaderProps {
 }
 
 const Container = styled.h1({
-  marginBottom: dimensions.margins.md,
+  marginBottom: dimensions.margins.lg,
 });
 
 const PostHeader: React.FC<ArticleHeaderProps> = ({ children }) => (

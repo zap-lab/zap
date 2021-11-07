@@ -17,12 +17,12 @@ export const colors = {
       bg: '#1c1d1c',
     },
     footer: {
-      bg: '#e6e8e6',
+      bg: '#e2e2e2',
     },
   },
   dark: {
     bg: {
-      primary: '#1c1d1c',
+      primary: '#1c1c1c',
       secondary: '#242724',
     },
     fg: {
@@ -33,10 +33,10 @@ export const colors = {
       normal: '#242724',
     },
     header: {
-      bg: '#1c1d1c',
+      bg: '#1c1c1c',
     },
     footer: {
-      bg: '#e6e8e6',
+      bg: '#1b1b1b',
     },
   },
   ui: {
@@ -94,10 +94,12 @@ export const dimensions = {
   paddings: {
     sm: 20,
     md: 40,
+    lg: 80,
   },
   margins: {
     sm: 20,
     md: 40,
+    lg: 80,
   },
   post: {
     lineHeight: {

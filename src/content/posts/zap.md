@@ -34,3 +34,22 @@ categories: blog-system
 ---
 It looks like text now, but you can easily turn it into a web page!
 ```
+
+Taking [Jekyll](https://jekyllrb-ko.github.io/), an early static web page generator, for example, you can change the above markdown to a web page with just the following command.
+
+```bash
+jekyll build
+```
+
+> However, since the web page generator gives developers too much freedom, they have to pay attention to various fields such as SEO, design, readability, and performance, which means that it is difficult for developers to create high-quality content.
+
+### The advent of Zap 
+
+![Figure 1. Zap project logo](./images/zap_cover.png)
+
+Zap supports the following four elements in the existing static web page generator to help developers easily create high-quality content.
+
+1. SEO (Search Engine Optimization)
+2. Design
+3. Readability
+4. Performance
