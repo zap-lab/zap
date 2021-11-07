@@ -32,7 +32,7 @@ const VercelBanner = styled.img({
 const Footer: React.FC = () => (
   <StyledFooter>
     <FooterInner>
-      <Link to="https://vercel.com/?utm_source=[team-name]&amp;utm_campaign=oss">
+      <Link to="https://vercel.com/?utm_source=zap-lab&amp;utm_campaign=oss">
         <VercelBanner src={powered_by_vercel} alt="Powered by Vercel" />
       </Link>
     </FooterInner>
