@@ -135,7 +135,7 @@ This project has following conventions.
 
 This open source project is sponsored by [Vercel](https://vercel.com/).
 
-[![Powered by Vercel](docs/sponsors/poweredby_vercel.svg)](https://vercel.com/)
+[![Powered by Vercel](assets/sponsors/powered_by_vercel.svg)](https://vercel.com/)
 
 # License
 
