@@ -131,6 +131,12 @@ This project has following conventions.
 - Conventional Commits ([link](https://www.conventionalcommits.org/en/v1.0.0/))
 - airbnb-typescript ([link](https://www.npmjs.com/package/eslint-config-airbnb-typescript))
 
+# Sponsors
+
+This open source project is sponsored by [Vercel](https://vercel.com/).
+
+[![Powered by Vercel](docs/sponsors/poweredby_vercel.svg)](https://vercel.com/)
+
 # License
 
 zap is under MIT license
