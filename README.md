@@ -133,9 +133,9 @@ This project has following conventions.
 
 # Sponsors
 
-This open source project is sponsored by [Vercel](https://vercel.com/).
+This open source project is sponsored by [Vercel](https://vercel.com/?utm_source=[team-name]&utm_campaign=oss).
 
-[![Powered by Vercel](assets/sponsors/powered_by_vercel.svg)](https://vercel.com/)
+[![Powered by Vercel](assets/sponsors/powered_by_vercel.svg)](https://vercel.com/?utm_source=[team-name]&utm_campaign=oss)
 
 # License
 
