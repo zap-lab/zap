@@ -13,7 +13,7 @@ const IndexPage: React.FC = () => {
         edges {
           node {
             id
-            excerpt(pruneLength: 250)
+            excerpt(pruneLength: 120)
             frontmatter {
               date(formatString: "YYYY-MM-DD")
               title
