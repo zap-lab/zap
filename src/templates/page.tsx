@@ -2,6 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Page from 'components/Page';
+import PostHeader from 'components/posts/PostHeader';
+import PostContent from 'components/posts/PostContent';
 import Container from 'components/Container';
 import IndexLayout from 'layouts';
 
@@ -31,9 +33,9 @@ const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
   <IndexLayout>
     <Page>
       <Container>
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
+        <PostHeader>{data.markdownRemark.frontmatter.title}</PostHeader>
         {/* eslint-disable-next-line react/no-danger */}
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+        <PostContent dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </Container>
     </Page>
   </IndexLayout>
