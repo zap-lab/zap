@@ -3,9 +3,9 @@ import styled from '@emotion/styled';
 import { dimensions } from 'styles/variables';
 
 interface ArticleHeaderProps {
-    dangerouslySetInnerHTML: {
+    dangerouslySetInnerHTML?: {
         __html: string;
-    } | undefined;
+    };
 }
 
 const Container = styled.div({
