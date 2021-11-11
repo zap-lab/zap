@@ -2,7 +2,7 @@ import React from 'react';
 
 import Page from 'components/Page';
 import Container from 'components/Container';
-import IndexLayout from 'layouts';
+import IndexLayout from 'layouts/IndexLayout';
 import Article from 'components/articles/Article';
 import { graphql, useStaticQuery } from 'gatsby';
 
@@ -13,7 +13,7 @@ const IndexPage: React.FC = () => {
         edges {
           node {
             id
-            excerpt(pruneLength: 250)
+            excerpt(pruneLength: 120)
             frontmatter {
               date(formatString: "YYYY-MM-DD")
               title

@@ -1,9 +1,13 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
 
 import Page from 'components/Page';
+import PostHeader from 'components/posts/PostHeader';
+import PostContent from 'components/posts/PostContent';
 import Container from 'components/Container';
-import IndexLayout from 'layouts';
+import IndexLayout from 'layouts/IndexLayout';
+import { colors, dimensions } from 'styles/variables';
 
 interface PageTemplateProps {
   data: {
@@ -27,15 +31,20 @@ interface PageTemplateProps {
   };
 }
 
+const PostPage = styled(Page)({
+  padding: `${dimensions.paddings.lg}px 0`,
+  backgroundColor: colors.light.bg.primary,
+});
+
 const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
   <IndexLayout>
-    <Page>
+    <PostPage>
       <Container>
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
+        <PostHeader>{data.markdownRemark.frontmatter.title}</PostHeader>
         {/* eslint-disable-next-line react/no-danger */}
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+        <PostContent dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </Container>
-    </Page>
+    </PostPage>
   </IndexLayout>
 );
 

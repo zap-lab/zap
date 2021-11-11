@@ -27,6 +27,7 @@ const PureImage = styled(Image.withComponent('div'))<PureImageStyledProps>(
     backgroundImage: `url('${url}')`,
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
+    fontSize: 0,
   })
 );
 const FluidImage = Image.withComponent(Img);

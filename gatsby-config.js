@@ -50,9 +50,22 @@ module.exports = {
               wrapperStyle: 'margin-bottom: 1rem',
             },
           },
-          'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: true,
+              noInlineHighlight: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-figure-caption`,
+            options: { figureClassName: 'md-figure' },
+          },
           {
             resolve: 'gatsby-remark-images',
             options: {
