@@ -5,6 +5,7 @@ import { Link } from 'gatsby';
 
 import { colors, heights, widths } from 'styles/variables';
 import Container from 'components/Container';
+import IconSearch from 'components/icons/IconSearch';
 import logo from 'images/logo.svg';
 import getEmSize from 'styles/getEmSize';
 
@@ -31,6 +32,10 @@ const HomepageLink = styled(Link)({
   },
 });
 
+const SearchLink = styled(Link)({
+  justifyContent: 'flex-end',
+});
+
 const Logo = styled.img({
   width: 45,
 });
@@ -41,6 +46,9 @@ const Header: React.FC = () => (
       <HomepageLink to="/">
         <Logo src={logo} alt="Zap" />
       </HomepageLink>
+      <SearchLink to="/search">
+        <IconSearch />
+      </SearchLink>
     </HeaderInner>
   </StyledHeader>
 );
